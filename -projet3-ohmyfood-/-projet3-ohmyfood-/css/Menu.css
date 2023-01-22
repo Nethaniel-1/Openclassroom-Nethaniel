@@ -6,16 +6,6 @@
   width: 700px;
 }
 
-@-webkit-keyframes spin {
-  from {
-    transform: rotate(200deg);
-  }
-  to {
-    transform: rotate(390deg);
-    transform-origin: 50% 50%;
-  }
-}
-
 @keyframes spin {
   from {
     transform: rotate(200deg);
@@ -23,14 +13,6 @@
   to {
     transform: rotate(390deg);
     transform-origin: 50% 50%;
-  }
-}
-@-webkit-keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 @keyframes rotation {
@@ -41,7 +23,7 @@
     transform: rotate(360deg);
   }
 }
-@-webkit-keyframes fill {
+@keyframes fill {
   from {
     transform: translateX(100%);
   }
@@ -49,12 +31,12 @@
     transform: translateX(0);
   }
 }
-@keyframes fill {
+@keyframes remplissageBasHaut {
   from {
-    transform: translateX(100%);
+    transform: translateY(100%);
   }
   to {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 body {
@@ -92,8 +74,7 @@ header p {
   position: relative;
 }
 .image img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 333px;
 }
@@ -133,7 +114,6 @@ h3 {
   display: block;
   position: relative;
   font-size: 20px;
-  -webkit-text-stroke: 2px;
 }
 .title .heart .fa-regular.fa-heart {
   font-size: 165%;
@@ -146,15 +126,16 @@ h3 {
   height: 0;
   position: absolute;
   left: 0;
-  transition: all 1.2s ease-in-out 0.3s;
+  top: -1px;
+  transition: all 3s ease-in-out 3s;
 }
 .title .heart .remplissage:hover {
+  top: 0%;
+  cursor: pointer;
   height: 100%;
 }
 .title .heart .remplissage:hover .fa-solid {
   background-image: linear-gradient(to top, #FF79DA, #9356dc);
-  height: 100%;
-  position: absolute;
 }
 
 /********************SECTIONS************************/
@@ -166,32 +147,27 @@ h3 {
 .entrées .Menu-item:nth-child(1),
 .Plats .Menu-item:nth-child(1),
 .Desssert .Menu-item:nth-child(1) {
-  -webkit-animation: apparitionPlat 700ms ease 300ms forwards;
-          animation: apparitionPlat 700ms ease 300ms forwards;
+  animation: apparitionPlat 700ms ease 300ms forwards;
 }
 .entrées .Menu-item:nth-child(2),
 .Plats .Menu-item:nth-child(2),
 .Desssert .Menu-item:nth-child(2) {
-  -webkit-animation: apparitionPlat 700ms ease 600ms forwards;
-          animation: apparitionPlat 700ms ease 600ms forwards;
+  animation: apparitionPlat 700ms ease 600ms forwards;
 }
 .entrées .Menu-item:nth-child(3),
 .Plats .Menu-item:nth-child(3),
 .Desssert .Menu-item:nth-child(3) {
-  -webkit-animation: apparitionPlat 700ms ease 900ms forwards;
-          animation: apparitionPlat 700ms ease 900ms forwards;
+  animation: apparitionPlat 700ms ease 900ms forwards;
 }
 .entrées .Menu-item:nth-child(4),
 .Plats .Menu-item:nth-child(4),
 .Desssert .Menu-item:nth-child(4) {
-  -webkit-animation: apparitionPlat 700ms ease 1200ms forwards;
-          animation: apparitionPlat 700ms ease 1200ms forwards;
+  animation: apparitionPlat 700ms ease 1200ms forwards;
 }
 .entrées .Menu-item:nth-child(5),
 .Plats .Menu-item:nth-child(5),
 .Desssert .Menu-item:nth-child(5) {
-  -webkit-animation: apparitionPlat 700ms ease 1500ms forwards;
-          animation: apparitionPlat 700ms ease 1500ms forwards;
+  animation: apparitionPlat 700ms ease 1500ms forwards;
 }
 
 .Menu-item {
@@ -201,17 +177,6 @@ h3 {
 
 .Plats {
   margin-bottom: -18px;
-}
-
-@-webkit-keyframes apparitionPlat {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 @keyframes apparitionPlat {
@@ -354,7 +319,7 @@ section > div .item__price .check-box i {
 }
 
 .btn {
-  background: linear-gradient(166deg, hsl(317deg, 100%, 74%) 0%, #9356dc 100%);
+  background: linear-gradient(166deg, #ff7ad9 0%, #9356dc 100%);
   color: white;
   border: none;
   border-radius: 30px;
@@ -383,22 +348,19 @@ section > div .item__price .check-box i {
 .Menu-item:hover .check-box__icone {
   display: inline;
   transition: transform 0.5s;
-  -webkit-animation: rotation 1s infinite linear;
-          animation: rotation 1s infinite linear;
+  animation: rotation 0.5s infinite linear;
 }
 .Menu-item:hover .check-box {
   display: flex;
   padding-right: 0;
   position: relative;
-  -webkit-animation: fill 0.1s linear forwards;
-          animation: fill 0.1s linear forwards;
+  animation: fill 0.5s linear forwards;
   width: 100%;
   overflow: hidden;
   transform: translateX(100%);
 }
 .Menu-item:hover .check-box i {
-  -webkit-animation: spin 1s linear;
-          animation: spin 1s linear;
+  animation: spin 1s linear;
   margin-top: -18px;
 }
 .Menu-item:hover .item__price p {
@@ -448,4 +410,4 @@ footer ol {
     display: flex;
     justify-content: space-around;
   }
-}/*# sourceMappingURL=Menu.css.map */
+}

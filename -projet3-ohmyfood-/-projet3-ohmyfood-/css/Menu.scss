@@ -46,7 +46,15 @@ $f6: #f6f6f6;
         transform: translateX(0);
     }
 }
+@keyframes remplissageBasHaut {
+    from {
+        transform: translateY(100%);
+    }
 
+    to {
+        transform: translateY(0);
+    }
+}
 
 
 body {
@@ -135,7 +143,7 @@ h3 {
         display: block;
         position: relative;
         font-size: 20px;
-        -webkit-text-stroke: 2px;
+       
 
 
         .fa-regular.fa-heart {
@@ -150,16 +158,33 @@ h3 {
             height: 0;
             position: absolute;
             left: 0;
-            transition: all 1.2s ease-in-out 0.3s;
+            top: -1px;
 
+            
+            transition: all 3s ease-in-out 3s;
+
+            // transform: scaleY(0);
+            // transform-origin: bottom;
+            // transition: transform 3s;
+             
+            
+            // overflow: hidden;
+            // transition: height 3s;
 
             &:hover {
+                top: 0%;
+                cursor: pointer;
                 height: 100%;
-
+                // transform: scaleY(1);
                 .fa-solid {
                     background-image: linear-gradient(to top, $rose, $violet);
-                    height: 100%;
-                    position: absolute;
+                    // height: 100%;
+                    // position: absolute;
+
+
+                    
+                    
+
                 }
             }
         }
@@ -398,14 +423,14 @@ section>div {
 
         display: inline;
         transition: transform 0.5s;
-        animation: rotation 1s infinite linear;
+        animation: rotation 0.5s infinite linear;
     }
 
     .check-box {
         display: flex;
         padding-right: 0;
         position: relative;
-        animation: fill 0.1s linear forwards;
+        animation: fill 0.5s linear forwards;
         width: 100%;
         overflow: hidden;
         transform: translateX(100%);
@@ -470,10 +495,6 @@ footer {
         list-style: none;
 
     }
-}
-
-@media screen and (max-width: 496px) {
-    .Menu-item {}
 }
 
 @media screen and (min-width: 768px) {

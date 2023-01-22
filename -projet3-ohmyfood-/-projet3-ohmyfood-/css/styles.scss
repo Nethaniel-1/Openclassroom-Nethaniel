@@ -7,12 +7,17 @@ $black: #353535;
 $rose: #FF79DA;
 $roseclair: #f5edff;
 
+
+
+
+
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
     }
 
-    100% {
+    100% { 
         transform: rotate(360deg);
     }
 }
@@ -27,8 +32,11 @@ $roseclair: #f5edff;
     100% {
         // opacity: 0;
         display: none;
+        
     }
 }
+
+
 
 // .loader {
 // background-color: rgba(255, 255, 255, 0.819);
@@ -128,7 +136,6 @@ p {
 .header {
     font-family: 'Shrikhand', cursive;
     text-align: center;
-
     width: 100%;
     font-weight: 600;
     height: 50px;
@@ -151,6 +158,14 @@ p {
     margin-right: auto;
 }
 
+
+.center_map {
+    margin-left: auto;
+    margin-right: auto;
+    width: 234px;
+    padding-left: 66px;
+}
+
 .en-tete__map {
 
     background-color: $grisfoncé;
@@ -161,8 +176,7 @@ p {
     color: #353535;
     border-top: 3px solid #eaeaea;
 
-
-    i {
+     i {
         margin-right: 10px;
     }
 
@@ -170,13 +184,12 @@ p {
         background-color: $grisfoncé;
         border: none;
         font-size: 20px;
-        width: 32%;
+        width: 59%;
 
     }
 
 
 }
-
 
 .en-tete {
 
@@ -206,7 +219,7 @@ p {
         margin: 7px;
         padding-bottom: 14px;
 
-        p {
+        s p {
             color: #666666;
             font-weight: 370;
         }
@@ -252,7 +265,7 @@ p {
 .Choice {
     margin: 17px;
 
-    h2 {
+     h2 {
         padding-left: 8px;
         font-size: 29px;
     }
@@ -262,7 +275,7 @@ p {
     }
 }
 
-.Choice__item {
+ .Choice__item {
     border: 1px solid #f6f6f6;
     height: 74px;
     background-color: #f6f6f6;
@@ -414,19 +427,19 @@ p {
             height: 0;
             position: absolute;
             left: 0;
-
+           
             transition: all 1.2s ease-in-out 0.3s;
 
 
             &:hover {
                 height: 100%;
-
+                transform-origin: bottom;
 
                 .fa-solid {
-
+                    height: 100%;
                     background-image: linear-gradient(to top, $rose, $violet);
 
-                    height: 100%;
+                    
                     position: absolute;
 
 
@@ -601,6 +614,29 @@ footer {
     .restaurants__card .new {
         margin-left: 81%;
         margin-top: 4%;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width:1120px) {
+    .restaurants__card .new {
+        margin-left: 79%;
+        margin-top: 4%;
+    }
+}
+
+@media screen and (min-width:1121px)and (max-width:1480px) {
+    .restaurants__card .new {
+        margin-left: 65%;
+        margin-top: 4%;
+    }
+
+}
+
+@media screen and (min-width:1524px)and (max-width:2000px) {
+    .restaurants__card .new {
+        margin-left: 74%;
+       
     }
 
 }
